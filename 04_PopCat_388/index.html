@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <audio id="audio1" src="audio/mixkit-cow-moo-in-the-barn-1751 (online-audio-converter.com).mp3"></audio>
+    <audio id="audio2" src="audio/Pop 2.mp3"></audio>
+
+    <div class="box" id="boxpop">
+        <p class="gamename">{{YutPop}}</p>
+        <p class="score">{{score}}</p>
+        <img id="popyut" src="image/270099982_597489718024927_1626795704314949787_n.jpg" alt="" >
+        <button v-if="status == 0" @click="OpenMouthImg()"><p>{{pop}}</p></button>
+        <button v-if="status == 1" @click="CloseMouthImg()"><p>{{pop}}</p></button>
+    </div>
+    
+</body>
+
+    <script>
+        const OpenMouthImg = "image/270296280_1288208348314955_8104458978712368087_n.jpg"
+        const CloseMouthImg = "image/270099982_597489718024927_1626795704314949787_n.jpg"
+
+        var box = new Vue({
+            el: "#boxpop",
+            data:{
+                YutPop: "YutPOP",
+                pop: "POP",
+                status: 0,
+                score: 0        
+            },
+            methods: {
+                OpenMouthImg: function () {
+                popyut.src = OpenMouthImg;  
+                this.status++
+                var audio = document.getElementById("audio1")
+                audio.play()
+                this.score++
+                },
+                CloseMouthImg: function () {
+                popyut.src = CloseMouthImg; 
+                this.status = 0 
+                var audio = document.getElementById("audio2")
+                audio.play()
+                this.score++
+                }
+            },
+
+        })
+    </script>
+</html>

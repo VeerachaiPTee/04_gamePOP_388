@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gamename{
+    background-size: 50%;
+    font-size: 3rem;
+    color: red;
+}
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 0%;
+    }
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+    
+}
+.box::before{
+    border-radius: 20px;
+    content: '';
+    position: absolute;
+    width: 600px;
+    height:400px;
+    background: linear-gradient(red,yellow);
+    animation: animate2 4s linear infinite;
+}
+.box::after{
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 20px;
+    inset: 4px;
+}
+@keyframes animate2
+{
+    0%{
+        transform: rotate(360deg);
+    }
+}
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+    top: 0;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+}
+.score{
+    font-size: 60px;
+}
+p{  
+    font-size: 20px;
+    font-weight: 700;
+    z-index: 1;
+}
+p:hover{
+    color: rgb(255, 238, 0);
+    transition: all .2s ease;
+}
+button::before{
+    border-radius: 20px;
+    content: '';
+    position: absolute;
+    width: 300px;
+    height:100px;
+    background: linear-gradient(red,yellow);
+    animation: animate 4s linear infinite;
+}
+button::after{
+    content: '';
+    position: absolute;
+    border-radius: 20px;
+    
+}
+button:hover{
+    box-shadow: 10px 10px 20px 0 rgba(0,0,0,0.2);
+}
+@keyframes animate
+{
+    0%{
+        transform: rotate(360deg);
+    }
+}
+img{
+    z-index: 1;
+    width: 500px;
+    height: 400px;
+}
